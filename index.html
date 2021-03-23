@@ -21,7 +21,7 @@
         </div>
 
         <div class="todos-container">
-             <ul>  <!--todo è un indice all'interno di todos-->  
+            <ul v-if="todos.length > 0">  <!--todo è un indice all'interno di todos-->  
                 <li v-for="(todo,index) in todos">
                     {{ todo }}<!--al click rimuovi il todo-->  
                     <i @click="removeTodo(index)"class="fas fa-times"></i>
@@ -30,6 +30,7 @@
                 </li>
                 
             </ul>
+            <h2 v-else>Non ci sono cose da fare!</h2>
 
         </div>
 
